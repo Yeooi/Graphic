@@ -25,10 +25,24 @@ public class SquarePiece extends Piece{
 		this.blue = 0;
 	}
 	
-	public void update()
+	public void update60()
+	{	
+		move();
+	}
+
+	public void update1000()
 	{
 		pos1Y = pos1Y + movement;	
-		
+		move();
+	}
+
+	public void rotate()
+	{
+
+	}
+
+	public void move()
+	{
 		this.pos2X = pos1X + size;
 		this.pos2Y = pos1Y;
 

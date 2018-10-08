@@ -28,8 +28,24 @@ public abstract class Piece{
 
 	}
 	
-	public void update()
+	public void update60()
 	{
+
+	}
+
+	public void update1000()
+	{
+		
+	}
+
+	public void rotate()
+	{
+
+	}
+
+	public void move()
+	{
+		
 	}
 
 	

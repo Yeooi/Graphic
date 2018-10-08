@@ -23,25 +23,41 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
    
 
     // Timer to repaint every 60ms (this allows the object to move)
-    Timer timer = new Timer(1000, new ActionListener() {
+    Timer timer = new Timer(60, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent event) {
-        p.update();
+        p.update60();
         repaint();
       }
       
     });
+
+    Timer timer2 = new Timer(1000, new ActionListener(){
+      @Override
+      public void actionPerformed(ActionEvent event) {
+        p.update1000();
+        repaint();
+      }
+    });
+
     timer.start();
+    timer2.start();
   }
 
   @Override
   public void keyPressed(KeyEvent evt)
   {
     int key = evt.getKeyCode();  // keyboard code for the pressed key
-   
-   if (evt.getKeyCode() == KeyEvent.VK_UP) {  
-     p.pos1Y = 0;
-   }
+    
+    if (evt.getKeyCode() == KeyEvent.VK_DOWN) {  
+      p.pos1Y += p.movement;
+    }
+    if (evt.getKeyCode() == KeyEvent.VK_LEFT) {  
+      p.pos1X -= p.movement;
+    }
+    if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {  
+      p.pos1X += p.movement;
+    }
   }
 
   @Override
