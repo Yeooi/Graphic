@@ -5,9 +5,10 @@ import javax.swing.*;
 
 public class Panel extends JPanel implements KeyListener,FocusListener, MouseListener {
 
-   // Draw
-   SquarePiece p;
-   Graphics2D g2;
+   
+  LinePiece p;
+  //SquarePiece p;
+  Graphics2D g2;
 
   public Panel() {
     // Set the dimensions of the panel
@@ -19,7 +20,8 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     addFocusListener(this);
     addMouseListener(this);
 
-    p = new SquarePiece(0,0);
+    p = new LinePiece(0, 0);
+    //p = new SquarePiece(0,0);
    
 
     // Timer to repaint every 60ms (this allows the object to move)
@@ -57,6 +59,10 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     }
     if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {  
       p.pos1X += p.movement;
+    }
+    if (evt.getKeyCode() == KeyEvent.VK_SPACE)
+    {
+      p.rotate();
     }
   }
 
