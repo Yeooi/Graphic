@@ -29,7 +29,7 @@ public class CollideMgr
                 || p.pos4Y ==  (grid.gridBox[i][j].y - grid.size))
                 && grid.gridBox[i][j].isFilled)
                 {
-                    System.out.println("Detach");
+                    Detach(p, grid);
                     return true;
                 }
                 else if(p.pos1Y == grid.height - grid.size 
