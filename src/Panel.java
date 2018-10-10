@@ -10,11 +10,12 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
   //SquarePiece p;
   Graphics2D g2;
   Grid grid;
+  CollideMgr collideMgr;
 
   public Panel() {
     // Set the dimensions of the panel
     setLayout(new GridLayout(1, 1));
-    setPreferredSize(new Dimension(500, 1200));
+    setPreferredSize(new Dimension(500, 1000));
     setBackground(new Color(99, 98, 98));
 
     addKeyListener(this);     // Set up event listening.
@@ -22,7 +23,8 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     addMouseListener(this);
 
     p = new LinePiece(0, 0);
-    grid = new Grid(500,1200,50);
+    grid = new Grid(500,1000,50);
+    collideMgr = new CollideMgr(grid,p);
     //p = new SquarePiece(0,0);
    
 
@@ -32,6 +34,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
       public void actionPerformed(ActionEvent event) {
         p.update60();
         repaint();
+        collideMgr.isCollide();
       }
       
     });
@@ -41,6 +44,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
       public void actionPerformed(ActionEvent event) {
         p.update1000();
         repaint();
+        collideMgr.isCollide();
       }
     });
 
@@ -85,7 +89,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
 
   @Override
   public void focusLost(FocusEvent evt) {
-      repaint();  // redraw without cyan border
+    repaint();  // redraw without cyan border
   }
 
   @Override

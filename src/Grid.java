@@ -6,14 +6,16 @@ public class Grid{
     int width;
     int x;
     int y;
+    int size;
     GridBox[][] gridBox;
 
-    public Grid(int height,int width,int size)
+    public Grid(int width,int height,int size)
     {
         this.height = height;
         this.width = width;
-        this.x = height/size;
-        this.y = width/size;
+        this.x = width/size;
+        this.y = height/size;
+        this.size = size;
 
         System.out.println("x"+x+"y"+y);
 
@@ -24,7 +26,8 @@ public class Grid{
         {
             for(int j=0;j<y;j++)
             {
-                System.out.println("i" + i + "j" + j);
+                //Debug for grid init
+                //System.out.println("i" + i + "j" + j);
                 gridBox[i][j] = new GridBox(i*size, j*size, size);
             }
         }
