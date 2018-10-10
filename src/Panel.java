@@ -34,7 +34,10 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
       public void actionPerformed(ActionEvent event) {
         p.update60();
         repaint();
-        collideMgr.isCollide();
+        if(collideMgr.isCollide())
+        {
+          newPiece();
+        }
       }
       
     });
@@ -44,12 +47,21 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
       public void actionPerformed(ActionEvent event) {
         p.update1000();
         repaint();
-        collideMgr.isCollide();
+        if(collideMgr.isCollide())
+        {
+          newPiece();
+        }
       }
     });
 
     timer.start();
     timer2.start();
+  }
+
+  public void newPiece()
+  {
+      this.p = new LinePiece(50, 0);
+      collideMgr.setPiece(p);
   }
 
   @Override
