@@ -25,6 +25,8 @@ public class LinePiece extends Piece{
 		this.green = 0;
 		this.blue = 255;
 
+		this.color = new Color(red,green,blue);
+
 		this.position = "hori";
 	}
 	

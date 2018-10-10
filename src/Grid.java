@@ -38,8 +38,7 @@ public class Grid{
         {
             for(int j=0;j<y;j++)
             {
-                g.setColor(Color.WHITE);
-                g.drawRect(gridBox[i][j].x, gridBox[i][j].y, gridBox[i][j].size,gridBox[i][j].size );
+                gridBox[i][j].draw(g);
             }
         }
 		

@@ -2,7 +2,7 @@
 import java.awt.Graphics2D;
 import java.awt.Color;
 
-public abstract class Piece{
+public class Piece{
 	
 	int pos1X;
 	int pos1Y;
@@ -23,9 +23,11 @@ public abstract class Piece{
 	int green;
 	int blue;
 
+	Color color;
+
 	public Piece()
 	{
-
+		
 	}
 	
 	public void update60()
