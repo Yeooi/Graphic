@@ -9,8 +9,7 @@ public class Grid{
     int size;
     GridBox[][] gridBox;
 
-    public Grid(int width,int height,int size)
-    {
+    public Grid(int width,int height,int size) {
         this.height = height;
         this.width = width;
         this.x = width/size;
@@ -22,10 +21,8 @@ public class Grid{
         gridBox = new GridBox[x][y];
 
 
-        for(int i=0;i<x;i++)
-        {
-            for(int j=0;j<y;j++)
-            {
+        for(int i=0;i<x;i++) {
+            for(int j=0;j<y;j++) {
                 //Debug for grid init
                 //System.out.println("i" + i + "j" + j);
                 gridBox[i][j] = new GridBox(i*size, j*size, size);
@@ -34,10 +31,8 @@ public class Grid{
     }
 
     public void draw(Graphics2D g) {
-        for(int i=0;i<x;i++)
-        {
-            for(int j=0;j<y;j++)
-            {
+        for(int i=0;i<x;i++) {
+            for(int j=0;j<y;j++) {
                 gridBox[i][j].draw(g);
             }
         }

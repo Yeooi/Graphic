@@ -22,7 +22,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     addFocusListener(this);
     addMouseListener(this);
 
-    p = new LinePiece(0, 0);
+    p = new LinePiece(50, 0);
     grid = new Grid(500,1000,50);
     collideMgr = new CollideMgr(grid,p);
     //p = new SquarePiece(0,0);

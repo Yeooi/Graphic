@@ -26,33 +26,25 @@ public class Piece{
 	Color color;
 
 	public Piece()
-	{
-		
-	}
+	{}
 	
 	public void update60()
-	{
-
-	}
+	{}
 
 	public void update1000()
-	{
-		
-	}
+	{}
 
 	public void rotate()
-	{
-
-	}
+	{}
 
 	public void move()
-	{
+	{}
 
-	}
+	public void boundary()
+	{}
 
 	
 	public void draw(Graphics2D g) {
-		
 		g.setColor(new Color(red, green, blue));
 	    g.fillRect(pos1X, pos1Y, size, size);
 		g.fillRect(pos2X, pos2Y, size, size);

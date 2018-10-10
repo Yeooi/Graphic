@@ -2,12 +2,11 @@
 import java.awt.Graphics2D;
 import java.awt.Color;
 
-public class LinePiece extends Piece{
+public class LinePiece extends Piece {
 
 	String position;
 
-	public LinePiece(int pos1X, int pos1Y)
-	{
+	public LinePiece(int pos1X, int pos1Y) {
 		super();
 		this.pos1X = pos1X;
 		this.pos1Y = pos1Y;
@@ -30,33 +29,28 @@ public class LinePiece extends Piece{
 		this.position = "hori";
 	}
 	
-	public void update60()
-	{	
+	public void update60() {	
+		boundary();
 		move();
 	}
 
-	public void update1000()
-	{
+	public void update1000() {
 		pos1Y = pos1Y + movement;	
+		boundary();
 		move();
 	}
 
-	public void rotate()
-	{
-		if(position == "hori")
-		{
+	public void rotate() {
+		if(position == "hori") {
 			position = "verti";
 		}
-		else
-		{
+		else {
 			position = "hori";
 		}
 	}
 
-	public void move()
-	{
-		if(position == "verti")
-		{
+	public void move() {
+		if(position == "verti") {
 			this.pos2X = pos1X;
 			this.pos2Y = pos1Y - size ;
 
@@ -66,8 +60,7 @@ public class LinePiece extends Piece{
 			this.pos4X = pos1X;
 			this.pos4Y = pos1Y + (size*2);
 		}
-		else
-		{
+		else {
 			this.pos2X = pos1X - size;
 			this.pos2Y = pos1Y;
 
@@ -76,6 +69,25 @@ public class LinePiece extends Piece{
 
 			this.pos4X = pos1X  + (size*2);
 			this.pos4Y = pos1Y;
+		}
+	}
+
+	public void boundary() {
+		if(position == "hori") {
+			if(pos1X < 0 || pos2X < 0 || pos3X < 0 || pos4X < 0) {
+				pos1X = 50;
+			}
+			else if(pos1X > 450 || pos2X > 450 || pos3X > 450 || pos4X > 450) {
+				pos1X = 350;
+			}
+		}
+		else {
+			if(pos1X < 0 || pos2X < 0 || pos3X < 0 || pos4X < 0) {
+				pos1X = 0;
+			}
+			else if(pos1X > 450 || pos2X > 450 || pos3X > 450 || pos4X > 450) {
+				pos1X = 450;
+			}
 		}
 	}
 

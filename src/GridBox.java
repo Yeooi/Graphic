@@ -16,14 +16,12 @@ public class GridBox{
         isFilled = false;
     }
 
-    public void setColour(int r,int g,int b)
-    {
+    public void setColour(int r,int g,int b) {
         color = new Color(r,g,b);
     }
 
     public void draw(Graphics2D g) {
-        if(isFilled)
-        {
+        if(isFilled) {
             g.setColor(color);
             g.fillRect(x, y, size,size);
         }
