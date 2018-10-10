@@ -6,11 +6,12 @@ import javax.swing.*;
 public class Panel extends JPanel implements KeyListener,FocusListener, MouseListener {
 
    
-  LinePiece p;
+  Piece p;
   //SquarePiece p;
   Graphics2D g2;
   Grid grid;
   CollideMgr collideMgr;
+  int noOfPieces = 2;
 
   public Panel() {
     // Set the dimensions of the panel
@@ -58,9 +59,19 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     timer2.start();
   }
 
-  public void newPiece()
-  {
+  public void newPiece() {
+
+      //uncomment this for testing
       this.p = new LinePiece(50, 0);
+
+      //uncomment for actual
+      int i = (int) (Math.random() * noOfPieces);
+      if(i == 1) {
+        this.p = new LinePiece(50, 0);
+      }
+      else {
+        this.p = new SquarePiece(50,0);
+      }
       collideMgr.setPiece(p);
   }
 
