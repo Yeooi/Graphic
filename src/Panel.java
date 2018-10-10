@@ -9,6 +9,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
   LinePiece p;
   //SquarePiece p;
   Graphics2D g2;
+  Grid grid;
 
   public Panel() {
     // Set the dimensions of the panel
@@ -21,6 +22,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     addMouseListener(this);
 
     p = new LinePiece(0, 0);
+    grid = new Grid(500,1200,50);
     //p = new SquarePiece(0,0);
    
 
@@ -49,7 +51,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
   @Override
   public void keyPressed(KeyEvent evt)
   {
-    int key = evt.getKeyCode();  // keyboard code for the pressed key
+    int key = evt.getKeyCode();  // get keyboard code for the pressed key
     
     if (evt.getKeyCode() == KeyEvent.VK_DOWN) {  
       p.pos1Y += p.movement;
@@ -117,5 +119,6 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     super.paintComponent(g);
     g2 = (Graphics2D) g;
     p.draw(g2);
+    grid.draw(g2);
   }
 }
