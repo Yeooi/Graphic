@@ -23,10 +23,10 @@ public class CollideMgr
         {
             for(int j=0;j<grid.y;j++)
             {
-                if(((p.pos1Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos1X ==  (grid.gridBox[i][j].x - grid.size ))
-                || (p.pos2Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos2X ==  (grid.gridBox[i][j].x - grid.size ))
-                || (p.pos3Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos3X ==  (grid.gridBox[i][j].x - grid.size ))
-                || (p.pos4Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos4X ==  (grid.gridBox[i][j].x - grid.size )))
+                if(((p.pos1Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos1X ==  (grid.gridBox[i][j].x))
+                || (p.pos2Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos2X ==  (grid.gridBox[i][j].x))
+                || (p.pos3Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos3X ==  (grid.gridBox[i][j].x))
+                || (p.pos4Y ==  (grid.gridBox[i][j].y - grid.size) && p.pos4X ==  (grid.gridBox[i][j].x)))
                 && grid.gridBox[i][j].isFilled)
                 {
                     Detach(p, grid);
