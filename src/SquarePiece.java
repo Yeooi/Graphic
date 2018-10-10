@@ -58,10 +58,10 @@ public class SquarePiece extends Piece{
 	}
 
 	public void boundary() {
-			if(pos1X < 0 || pos2X < 0 || pos3X < 0 || pos4X < 0) {
+			if(pos1X < 0 || pos3X < 0) {
 				pos1X = 0;
 			}
-			else if(pos1X > 450 || pos2X > 450 || pos3X > 450 || pos4X > 450) {
+			else if(pos2X > 450 || pos4X > 450) {
 				pos1X = 400;
 			}
 		}

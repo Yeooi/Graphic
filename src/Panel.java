@@ -47,7 +47,6 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
       @Override
       public void actionPerformed(ActionEvent event) {
         p.update1000();
-        repaint();
         if(collideMgr.isCollide())
         {
           newPiece();
