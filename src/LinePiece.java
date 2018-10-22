@@ -6,6 +6,8 @@ public class LinePiece extends Piece {
 
 	String position;
 
+	//Enum position1 = new Enum (hori,vertical);
+
 	public LinePiece(int pos1X, int pos1Y) {
 		super();
 		this.pos1X = pos1X;

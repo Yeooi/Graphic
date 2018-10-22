@@ -7,6 +7,7 @@ public class GridBox{
     int y;
     int size;
     boolean isFilled;
+    boolean isColor;
     Color color;
 
     public GridBox (int x,int y,int size){
@@ -14,6 +15,7 @@ public class GridBox{
         this.y = y;
         this.size = size;
         isFilled = false;
+        isColor = false;
     }
 
     public void setColour(int r,int g,int b) {
@@ -21,12 +23,14 @@ public class GridBox{
     }
 
     public void draw(Graphics2D g) {
+
         if(isFilled) {
             g.setColor(color);
-            g.fillRect(x, y, size,size);
+            g.fillRect(x,y,size,size);
         }
+    
         g.setColor(Color.WHITE);
-        g.drawRect(x, y, size,size );
+        g.drawRect(x,y,size,size);
 	}
 
 }

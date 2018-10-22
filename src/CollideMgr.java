@@ -9,7 +9,6 @@ public class CollideMgr
     {
         this.grid = grid;
         this.p = p;
-        System.out.println(grid.height - grid.size);
     }
 
     public void setPiece(Piece p)
@@ -47,7 +46,7 @@ public class CollideMgr
 
     public void Detach(Piece p,Grid grid)
     {
-        grid.gridBox[p.pos1X/grid.size][p.pos1Y/grid.size].isFilled = true;
+        grid.gridBox[p.pos1X/grid.size][p.pos1Y/grid.size].isFilled = true;      
         grid.gridBox[p.pos1X/grid.size][p.pos1Y/grid.size].color = p.color;
 
         grid.gridBox[p.pos2X/grid.size][p.pos2Y/grid.size].isFilled = true;

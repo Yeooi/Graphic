@@ -11,6 +11,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
   Graphics2D g2;
   Grid grid;
   CollideMgr collideMgr;
+  ClearMgr clearMgr;
   int noOfPieces = 2;
 
   public Panel() {
@@ -26,11 +27,12 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     p = new LinePiece(50, 0);
     grid = new Grid(500,1000,50);
     collideMgr = new CollideMgr(grid,p);
+    clearMgr = new ClearMgr(grid,p);
     //p = new SquarePiece(0,0);
    
 
     // Timer to repaint every 60ms (this allows the object to move)
-    Timer timer = new Timer(60, new ActionListener() {
+    Timer timer = new Timer(30, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent event) {
         p.update60();
@@ -51,6 +53,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
         {
           newPiece();
         }
+        clearMgr.checkClear();
       }
     });
 
