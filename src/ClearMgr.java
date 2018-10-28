@@ -27,7 +27,6 @@ public class ClearMgr
             int counter = 0;
             for(int col = 0; col<grid.x;col++)
             {
-                System.out.println(col);
                 if(grid.gridBox[col][row].isFilled)
                 {
                     counter++;
@@ -46,6 +45,14 @@ public class ClearMgr
     public void pushDown()
     {
         System.out.println("Pushing down");
+        for(int row=grid.y-1;row>0;row--)
+        {
+            for(int col=grid.x-1;col>=0;col--)
+            {
+                grid.gridBox[col][row].isFilled = grid.gridBox[col][row-1].isFilled;
+                grid.gridBox[col][row].color = grid.gridBox[col][row-1].color;
+            }
+        }
     }
 
     public void clearRow(int row)
