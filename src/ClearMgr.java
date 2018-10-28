@@ -18,42 +18,43 @@ public class ClearMgr
 
     public void checkClear()
     {
-        int j = 0;
-        for(int i=0;i<grid.y;i++)
+
+        //double check my grid
+        //y is row, 20 rows
+        //x is col, 10 cols
+        for(int row=0;row<grid.y;row++)
         {
             int counter = 0;
-            while(j<grid.x)
+            for(int col = 0; col<grid.x;col++)
             {
-                if(grid.gridBox[j][i].isFilled)
+                System.out.println(col);
+                if(grid.gridBox[col][row].isFilled)
                 {
                     counter++;
                 }
-                j++;
-            }
-            j=0;
 
-            if(counter == grid.x)
-            {
-                clearRow(j);
-                counter = 0;
+                if(counter == grid.x)
+                {
+                    clearRow(row);
+                    counter = 0;
+                    pushDown();
+                }
             }
         }
     }
 
     public void pushDown()
     {
-
+        System.out.println("Pushing down");
     }
 
-    public void clearRow(int x)
+    public void clearRow(int row)
     {
-        System.out.println("clearing");
-        System.out.println(x);
+        System.out.println("Clearing row " + row);
         for(int i = 0; i < grid.x; i++)
         {
-            grid.gridBox[x][i].isFilled = false;
-            grid.gridBox[x][i].color = new Color(99, 98, 98);
-            System.out.println("x" + x + "i" + i + grid.gridBox[x][i].isFilled);
+            grid.gridBox[i][row].isFilled = false;
+            grid.gridBox[i][row].color = new Color(99, 98, 98);
         }
     }
 }

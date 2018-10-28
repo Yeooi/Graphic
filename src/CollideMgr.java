@@ -46,6 +46,7 @@ public class CollideMgr
 
     public void Detach(Piece p,Grid grid)
     {
+        System.out.println("Detach");
         grid.gridBox[p.pos1X/grid.size][p.pos1Y/grid.size].isFilled = true;      
         grid.gridBox[p.pos1X/grid.size][p.pos1Y/grid.size].color = p.color;
 

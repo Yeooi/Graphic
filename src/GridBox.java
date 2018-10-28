@@ -16,6 +16,7 @@ public class GridBox{
         this.size = size;
         isFilled = false;
         isColor = false;
+        color = new Color(99, 98, 98);
     }
 
     public void setColour(int r,int g,int b) {

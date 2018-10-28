@@ -35,7 +35,9 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     Timer timer = new Timer(30, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent event) {
+        removeAll();
         p.update60();
+        revalidate();
         repaint();
         if(collideMgr.isCollide())
         {
