@@ -28,7 +28,6 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
     grid = new Grid(500,1000,50);
     collideMgr = new CollideMgr(grid,p);
     clearMgr = new ClearMgr(grid,p);
-    //p = new SquarePiece(0,0);
    
 
     // Timer to repaint every 60ms (this allows the object to move)

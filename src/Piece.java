@@ -19,6 +19,8 @@ public class Piece{
 	int size = 50;
 	int movement = 50;
 
+	int position = 0;
+
 	int red;
 	int green;
 	int blue;

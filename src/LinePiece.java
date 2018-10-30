@@ -4,10 +4,6 @@ import java.awt.Color;
 
 public class LinePiece extends Piece {
 
-	String position;
-
-	//Enum position1 = new Enum (hori,vertical);
-
 	public LinePiece(int pos1X, int pos1Y) {
 		super();
 		this.pos1X = pos1X;
@@ -28,7 +24,6 @@ public class LinePiece extends Piece {
 
 		this.color = new Color(red,green,blue);
 
-		this.position = "hori";
 	}
 	
 	public void update60() {	
@@ -43,16 +38,16 @@ public class LinePiece extends Piece {
 	}
 
 	public void rotate() {
-		if(position == "hori") {
-			position = "verti";
-		}
-		else {
-			position = "hori";
+		position += 2;
+
+		if(position > 3)
+		{
+			position = 0;
 		}
 	}
 
 	public void move() {
-		if(position == "verti") {
+		if(position == 0) {
 			this.pos2X = pos1X;
 			this.pos2Y = pos1Y - size ;
 
@@ -75,7 +70,7 @@ public class LinePiece extends Piece {
 	}
 
 	public void boundary() {
-		if(position == "hori") {
+		if(position == 0) {
 			if(pos1X < 0 || pos2X < 0 || pos3X < 0 || pos4X < 0) {
 				pos1X = 50;
 			}

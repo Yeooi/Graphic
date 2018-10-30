@@ -2,17 +2,17 @@
 import java.awt.Graphics2D;
 import java.awt.Color;
 
-public class SquarePiece extends Piece{
+public class TPiece extends Piece{
 
 
-	public SquarePiece(int pos1X, int pos1Y)
+	public TPiece(int pos1X, int pos1Y)
 	{
 		super();
 		this.pos1X = pos1X;
 		this.pos1Y = pos1Y;
 
-		this.pos2X = pos1X + size;
-		this.pos2Y = pos1Y;
+		this.pos2X = pos1X - size;
+		this.pos2Y = pos1Y + size;
 
 		this.pos3X = pos1X;
 		this.pos3Y = pos1Y + size;
@@ -22,7 +22,7 @@ public class SquarePiece extends Piece{
 
 		this.red = 0;
 		this.green = 255;
-		this.blue = 0;
+		this.blue = 255;
 
 		this.color = new Color(red,green,blue);
 	}
@@ -47,8 +47,8 @@ public class SquarePiece extends Piece{
 
 	public void move()
 	{
-		this.pos2X = pos1X + size;
-		this.pos2Y = pos1Y;
+		this.pos2X = pos1X - size;
+		this.pos2Y = pos1Y + size;
 
 		this.pos3X = pos1X;
 		this.pos3Y = pos1Y + size;
