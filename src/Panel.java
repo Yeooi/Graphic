@@ -12,7 +12,7 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
   Grid grid;
   CollideMgr collideMgr;
   ClearMgr clearMgr;
-  int noOfPieces = 2;
+  int noOfPieces = 3;
 
   public Panel() {
     // Set the dimensions of the panel
@@ -64,13 +64,14 @@ public class Panel extends JPanel implements KeyListener,FocusListener, MouseLis
 
   public void newPiece() {
 
-      //uncomment this for testing
-      this.p = new LinePiece(50, 0);
 
       //uncomment for actual
       int i = (int) (Math.random() * noOfPieces);
       if(i == 1) {
         this.p = new LinePiece(50, 0);
+      }
+      else if(i == 2) {
+        this.p = new TPiece(50,0);
       }
       else {
         this.p = new SquarePiece(50,0);
